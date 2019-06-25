@@ -1,0 +1,61 @@
+{
+	"name": "Jitendra Sharma",
+	"profession": "UI Developer",
+	"education": [
+		{
+			"degree": "Bachelor of Technology",
+			"university": "Uttarakhand Technical University Deharadun",
+			"stream": "Electrical Engineering",
+			"score" : "6.7"
+		},
+		{
+			"degree": "Bachelor of Technology",
+			"university": "Uttarakhand Technical University Deharadun",
+			"stream": "Electrical Engineering",
+			"score" : "6.7"
+		}
+	],
+	"stack": [
+		"Javascript ES6",
+		"ReactJS",
+		"Redux",
+		"jQuery",
+		"CSS3",
+		"SASS",
+		"HTML5",
+		"Accessibility"
+	],
+	"cv": "#",
+	"social": {
+		"facebook": "https://www.facebook.com/onejeet",
+		"twitter": "https://www.twitter.com/onejeet",
+		"github": "https://www.github.com/onejeet",
+		"linkedin": "https://www.linkedin.com/in/onejeet",
+		"blog": "https://www.dotscreated.com"
+	},
+	"certificates":[
+		{
+			"name": "Udacity's Frontend Nanodegree",
+			"vender": "Udacity India",
+			"vender_url": "https://www.udacity.com",
+			"year": "Oct 2018",
+			"details": "",
+			"certificate_url": "#"
+		},
+		{
+			"name": "Basic Python by Rice University",
+			"vender": "Coursera",
+			"vender_url": "https://www.coursera.com",
+			"year": "Feb 2014",
+			"details": "",
+			"certificate_url": "#"
+		}
+	]
+	"projects": [
+		{
+
+		}
+
+	]
+	
+}
