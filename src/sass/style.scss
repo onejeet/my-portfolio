@@ -1,3 +1,10 @@
+@mixin container{
+    width: 90%;
+    margin:0 auto;
+    @media all and (max-width: 768px){
+        width:100%;
+    }
+}
 
 @import 'home';
 @import 'footer';

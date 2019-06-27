@@ -1,14 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
 body{
     background: url('../assets/back.jpg') no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    font-family: 'Scope One', serif;
 }
 
 a{
-    transition: box-shadow 0.2s linear;
+    text-decoration: none;
+    color:inherit;
+    transition: all 0.2s linear;
+    padding: 1px 2px;
     &:hover{
-        color: #fff;
-        background-color: rgba(236,132,132,1);
-        box-shadow:0 0 1px 7px rgba(236,132,132, 0.15);
+        color:#db3286;
+        //color: #fff;
+        //background-color: #db3286;
+        //box-shadow:0 0 1px 7px rgba(219,50,134, 0.15);
     }
 }
 

@@ -2,26 +2,39 @@
     .left-half{
         position: absolute;
         width: 50%;
-        //height:100vh;
         left:0;
-        border:1px solid #e3e3e3;
+        font-size: 20px;
+        @media all and (max-width:768px){
+            font-size: 16px;
+        }
+        .intro{
+            position: relative;
+            display: inline-block;
+            p{
+                display: inline-block;
+                font-size: 1.6em;
+                overflow: hidden;
+                margin: 100px auto 0px;
+                padding: 0 30px;
+            }       
+        }
     }
     .right-half{
         position: absolute;
         width: 50%;
-        //height:100vh;
         left:50%;
-        border:1px solid #e3e3e3;
+        top:10%;
+        font-size: 20px;
         .profile-photo{
             position: relative;
             overflow: hidden;
             border-radius: 50%;
             margin: 0 auto;
             top: 50px;
-            border: 2px solid #FF7F50;
+            border: 2px solid #db3286;
             //animation: 1s infinite alternate glow;
-            box-shadow: 0 0 1px 7px rgba(255,127,80, 0.15), 
-                        0 0 2px 14px rgba(255,127,80, 0.1);
+            box-shadow: 0 0 1px 7px rgba(219,50,134, 0.15), 
+                        0 0 2px 14px rgba(219,50,134, 0.1);
             img{
                 display: inline;
                 margin: 0 auto;
@@ -35,6 +48,14 @@
             margin:0 auto;
             top:50px;
             text-align: center;
+            .name{
+                font-size: 1.75em;
+                margin: 15px auto 10px;
+            }
+            .role{
+                font-size: 1.1em;
+                margin: -10px auto 10px;
+            }
             .social{
                 a{
                     color:#fff;
@@ -42,19 +63,26 @@
                     background-color: #000;
                     transition: all 0.2s linear;
                     &.icon{
-                        width:20px;
-                        height:20px;
+                        position: relative;
+                        width:35px;
+                        height:35px;
                         padding: 8px;
-                        margin-right:8px;
+                        margin-right:15px;
+                    }
+                    &:last-child{
+                        margin-right: 0;
                     }
                     i{
-                        vertical-align: middle;
                         font-size: 1.2em;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                     }
                     &:hover{
                         color: #fff;
-                        background-color: #FF7F50;
-                        box-shadow:0 0 1px 7px rgba(255,127,80, 0.15);
+                        background-color: #db3286;
+                        box-shadow:0 0 1px 7px rgba(219,50,134, 0.15);
                     }
                 }
             }
@@ -63,11 +91,20 @@
     
 }
 
-@keyframes glow{
-    from{
-        box-shadow: 0 0 2px 1px #f4f141;
+@keyframes typing {
+    from { 
+        width: 0% 
     }
-    to{
-        box-shadow:  0 0 2px 2px #f4f141;
+    to { 
+        width: 100% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: orange; 
     }
 }

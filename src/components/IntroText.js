@@ -5,7 +5,11 @@ import React from 'react';
 const IntroText = () => {
     return (
         <div className="intro">
-            Hello World!
+            <p>
+            Hello World...<br/>
+            My Name is Jitendra Sharma. Frontend Developer who focuses on writing clean, elegant and efficient code.
+            Feel free to check out my projects or say hello on <a href="">jitendra909@gmail.com</a> 
+            </p>
         </div>
     );
 }

@@ -1,6 +1,22 @@
 .footer{
+    @include container;
     position: absolute;
     bottom: 0;
-    margin: 10px auto;
-
+    margin: 10px auto 15px;
+    font-size: 20px;
+    display:flex;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    .nav{
+        a{
+            margin-right:15px;
+            &:last-child{
+                margin-right:0;
+            }
+        }
+    }
+    .copyright{
+        font-size: 0.65em;
+    } 
 }
