@@ -40,3 +40,20 @@ a{
         opacity: 0.4;
     }
 }
+.profile-photo{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 2px solid #db3286;
+    //animation: 1s infinite alternate glow;
+    box-shadow: 0 0 1px 7px rgba(219,50,134, 0.15), 
+                0 0 2px 14px rgba(219,50,134, 0.1);
+    img{
+        display: inline;
+        margin: 0 auto;
+        //margin-left: -25%; //centers the image
+        height: 100%;
+        width: auto;
+    }
+}

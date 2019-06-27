@@ -1,6 +1,5 @@
 import React from 'react';
 //import imagePlaceholder from '../assets/placeholder.png';
-import photo from '../assets/j.jpg';
 
 let imagePlaceholder = 'https://via.placeholder.com/300.png';
 
@@ -12,7 +11,7 @@ const ProfilePhoto = (props) => {
     }
     return (
         <div className='profile-photo' style={style}>
-          <img src={imagePlaceholder} alt=""/>
+          <img src={props.photo? props.photo : imagePlaceholder} alt=""/>
          </div>
     );
     
