@@ -18,7 +18,7 @@ const Footer = () => {
                 <Link to="/contact">Contact</Link>
             </div>
             <div className="copyright">
-                &copy;  Jitendra Sharma
+              
             </div>
         </div>
     );

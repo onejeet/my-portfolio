@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const InfoBox = (props) => {
     return(
         <div className="info">
-            <h1 className="name">Alex Martini</h1>
+            <h1 className="name">Jitendra Sharma</h1>
             <p className="role">UI Developer</p>
             <div className="social">
                 <a href="https://www.twitter.com/onejeet" target="_blank"  rel="noopener noreferrer" className="icon"><i className="fa fa-twitter" aria-hidden="true"></i></a> 

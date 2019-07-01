@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
 import bckImage from '../assets/pattern.png';
 
-let bgImagePath = '../assets/back.jpg';
-
 let initialState = {
     'value':'light'
 }

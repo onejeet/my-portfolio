@@ -13,12 +13,12 @@
 
 
 .app.light{
-    @include header(#000, #fff);
-    @include home(#000, #fff);
-    @include footer(#000, #fff);
+    @include header(#4c4c4c, #fff);
+    @include home(#4c4c4c, #fff);
+    @include footer(#4c4c4c, #fff);
 }
 .app.dark{
-    @include header(#fff, #000);
-    @include home(#fff, #000);
-    @include footer(#fff, #000);
+    @include header(#fff, #4c4c4c);
+    @include home(#fff, #4c4c4c);
+    @include footer(#fff, #4c4c4c);
 }
