@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import bckImage from '../assets/pattern.png';
 
 let bgImagePath = '../assets/back.jpg';
 
@@ -9,9 +10,9 @@ let initialState = {
 function theme(state = initialState, action){
     if(action.type === 'UPDATE_THEME'){
         if(action.payload === 'dark'){
-            document.body.style.background = "black";
+            document.body.style.backgroundColor = "#000000";
         }else{
-            document.body.style.background = "url('"+bgImagePath+"') no-repeat";
+            document.body.style.backgroundColor = "#ffffff";
         }
         return Object.assign({}, state, {'value':action.payload});
     }
