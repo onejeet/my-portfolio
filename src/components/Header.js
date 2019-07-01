@@ -8,8 +8,8 @@ const Header = (props) => {
     return (
         <div className="header">
             <div className="theme-selector">
-                {currentTheme !== 'light' ? <div className="light" title="Light theme" onClick={(e) => props.updateTheme(e.target.className)}></div>
-                :<div className="dark" title="Dark theme" onClick={(e) => props.updateTheme(e.target.className)}></div>} 
+                {currentTheme !== 'light' ? <div className="light" title="Turn Off Dark Theme" onClick={(e) => props.updateTheme(e.target.className)}></div>
+                :<div className="dark" title="Turn On Dark Theme" onClick={(e) => props.updateTheme(e.target.className)}></div>} 
             </div>      
         </div>
     );

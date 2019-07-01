@@ -8,9 +8,9 @@ let initialState = {
 function theme(state = initialState, action){
     if(action.type === 'UPDATE_THEME'){
         if(action.payload === 'dark'){
-            document.body.style.backgroundColor = "#000000";
+            document.body.style.background = "#000000";
         }else{
-            document.body.style.backgroundColor = "#ffffff";
+            document.body.style.background = "url('"+bckImage+"') repeat";
         }
         return Object.assign({}, state, {'value':action.payload});
     }
