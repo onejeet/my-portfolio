@@ -12,13 +12,12 @@ body{
 a{
     text-decoration: none;
     color:inherit;
-    transition: all 0.2s linear;
     padding: 1px 2px;
     &:hover{
-        color:#db3286;
-        //color: #fff;
-        //background-color: #db3286;
-        //box-shadow:0 0 1px 7px rgba(219,50,134, 0.15);
+        background: -webkit-linear-gradient(to right, #f35d18, #db3286);
+        background: linear-gradient(to right, #f35d18, #db3286);
+        color:transparent;
+        background-clip: text;
     }
 }
 
@@ -26,20 +25,6 @@ a{
     display: inline-block;
 }
 
-.outer{
-    position: fixed;
-    video{
-        position: fixed;
-        min-width: 100%;
-        min-height: 100%;
-        right:0;
-        top:0;
-        z-index: 0;
-        bacground-color: #ffffff;
-        z-index: -1;
-        opacity: 0.4;
-    }
-}
 .profile-photo{
     position: relative;
     overflow: hidden;

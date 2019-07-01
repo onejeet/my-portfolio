@@ -3,6 +3,7 @@
         position: absolute;
         width: 50%;
         left:0;
+        top:5%;
         font-size: 20px;
         @media all and (max-width:768px){
             font-size: 16px;
@@ -23,7 +24,7 @@
         position: absolute;
         width: 50%;
         left:50%;
-        top:10%;
+        top:20%;
         font-size: 20px;
         .info{
             position: relative;
@@ -63,7 +64,7 @@
                     }
                     &:hover{
                         color: #fff;
-                        background-color: #db3286;
+                        background: #db3286;
                         box-shadow:0 0 1px 7px rgba(219,50,134, 0.15);
                     }
                 }

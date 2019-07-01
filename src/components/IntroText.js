@@ -1,9 +1,5 @@
 import React from 'react';
 
-typewriter = () => {
-    
-}
-
 const IntroText = () => {
     return (
         <div className="intro">
