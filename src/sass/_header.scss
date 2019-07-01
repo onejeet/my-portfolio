@@ -1,0 +1,25 @@
+@mixin header($color, $invColor){
+    .header{
+        .theme-selector{
+            div{
+                position: absolute;
+                top: 5px;
+                right:10px;
+                width: 20px;
+                height: 20px;
+                border-radius:100%;
+                border: 1px solid $invColor;
+                background-color: $color;
+                cursor: pointer;
+                &:before{
+                    position: absolute;
+                    content: 'Theme';
+                    right: 23px;
+                    top:1px;
+                    font-size: 14px;
+                    color:$color;
+                }
+            }
+        }
+    }
+}

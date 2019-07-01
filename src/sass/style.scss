@@ -6,7 +6,19 @@
     }
 }
 
-
-@import 'footer';
+@import 'header';
 @import 'home';
+@import 'footer';
 @import 'general';
+
+
+.app.light{
+    @include header(#000, #fff);
+    @include home(#000, #fff);
+    @include footer(#000, #fff);
+}
+.app.dark{
+    @include header(#fff, #000);
+    @include home(#fff, #000);
+    @include footer(#fff, #000);
+}

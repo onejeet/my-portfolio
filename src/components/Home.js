@@ -6,15 +6,16 @@ import IntroText from './IntroText';
 import photo from '../assets/j.jpg';
 
 
-const Home = () => {
+const Home = (props) => {
+    let currentTheme = props.theme;
     return (
-        <div className="app">
+        <div className="home">
             <div className="left-half">
                 <IntroText />
             </div>
             <div className="right-half">
                 <ProfilePhoto 
-                width= '100px'
+                width= '140px'
                 photo = {photo}
                 />
                 <InfoBox />
@@ -22,6 +23,5 @@ const Home = () => {
         </div>
     );
 }
-
 
 export default Home;
