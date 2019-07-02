@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import SingleProject from './RepositoryBox';
 import RepositoryBox from './RepositoryBox';
 let repos = [];
 
@@ -13,7 +12,7 @@ class Projects extends PureComponent {
         fetch('https://api.github.com/users/onejeet/repos')
         .then((response) => response.json())
         .then((data)=>{
-        repos = data.filter((repo)=> repo.fork !== true);
+            repos = data.filter((repo)=> repo.fork !== true && repo.id !== 41561483);
         })
         .catch((e) => {
             console.log("Error Occured: "+e);
@@ -23,12 +22,17 @@ class Projects extends PureComponent {
     render(){
         return (
             <div className="projects">
-                {repos.map((repo) =>
-                    <RepositoryBox
-                    key = {repo.id}
-                    project = {repo}
-                    />
-                )}
+                <div className="controls">
+                    
+                </div>
+                <div className="main">
+                    {repos.map((repo) =>
+                        <RepositoryBox
+                        key = {repo.id}
+                        project = {repo}
+                        />
+                    )}
+                </div>
             </div>
         );
     } 
