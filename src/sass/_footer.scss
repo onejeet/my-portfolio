@@ -1,7 +1,7 @@
 @mixin footer($color, $invColor){
     .footer{
         @include container;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         margin: 10px auto 15px;
         font-size: 20px;

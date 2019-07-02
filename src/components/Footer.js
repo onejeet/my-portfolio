@@ -14,7 +14,8 @@ const Footer = () => {
                     />
                 </div>
                 <Link to="/" >Home</Link>
-                <a href="https://www.dotscreated.com" target="_blank">Blog</a>
+                <a href="https://www.dotscreated.com" rel="noopener noreferrer" target="_blank">Blog</a>
+                <Link to="/projects">Projects</Link>
                 <Link to="/contact">Contact</Link>
             </div>
             <div className="copyright">

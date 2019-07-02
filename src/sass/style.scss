@@ -1,24 +1,23 @@
-@mixin container{
-    width: 90%;
-    margin:0 auto;
-    @media all and (max-width: 768px){
-        width:100%;
-    }
-}
+$color : #4c4c4c;
+$invColor : #fff;
 
+
+@import 'general';
 @import 'header';
 @import 'home';
+@import 'projects';
 @import 'footer';
-@import 'general';
 
 
 .app.light{
-    @include header(#4c4c4c, #fff);
-    @include home(#4c4c4c, #fff);
-    @include footer(#4c4c4c, #fff);
+    @include header($color, $invColor);
+    @include home($color, $invColor);
+    @include projects($color, $invColor);
+    @include footer($color, $invColor);
 }
 .app.dark{
-    @include header(#fff, #4c4c4c);
-    @include home(#fff, #4c4c4c);
-    @include footer(#fff, #4c4c4c);
+    @include header($invColor, $color);
+    @include home($invColor, $color);
+    @include projects($invColor, $color);
+    @include footer($invColor, $color);
 }
