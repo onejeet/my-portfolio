@@ -7,4 +7,9 @@ export function updateTheme(theme){
     }
 }
 
-
+export function updateRepos(repos){
+    return {
+        type: 'UPDATE_REPOS',
+        payload: repos
+    }
+}

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import RepositoryBox from './RepositoryBox';
-let repos = [];
+import { updateRepos } from '../actions'
 
 class Projects extends PureComponent {
 
@@ -9,10 +10,12 @@ class Projects extends PureComponent {
     }
 
     getRepos = () => {
+        let repos;
         fetch('https://api.github.com/users/onejeet/repos')
         .then((response) => response.json())
         .then((data)=>{
             repos = data.filter((repo)=> repo.fork !== true && repo.id !== 41561483);
+            this.props.updateRepos(repos);
         })
         .catch((e) => {
             console.log("Error Occured: "+e);
@@ -20,6 +23,7 @@ class Projects extends PureComponent {
     }
 
     render(){
+        const { repos } = this.props;
         return (
             <div className="projects">
                 <div className="controls">
@@ -38,5 +42,16 @@ class Projects extends PureComponent {
     } 
 }
 
+function mapStateToProps(state){
+    return {
+        repos: state.currentRepos.repos
+    }
+}
 
-export default Projects;
+function mapDispatchToProps(dispatch){
+    return {
+        updateRepos :(repos) => dispatch(updateRepos(repos))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Projects);

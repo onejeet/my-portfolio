@@ -24,7 +24,7 @@ const App = (props) => {
 
 function mapStateToProps(state){
     return {
-        theme: state.theme.value
+        theme: state.currentTheme.theme
     }
 }
 
