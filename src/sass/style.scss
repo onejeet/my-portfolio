@@ -1,5 +1,6 @@
 $color : #4c4c4c;
 $invColor : #fff;
+$darkBck : #000000;
 
 
 @import 'general';
@@ -19,5 +20,5 @@ $invColor : #fff;
     @include header($invColor, $color);
     @include home($invColor, $color);
     @include projects($invColor, $color);
-    @include footer($invColor, $color);
+    @include footer($invColor, $darkBck);
 }

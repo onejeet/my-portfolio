@@ -1,16 +1,17 @@
 @mixin footer($color, $invColor){
     .footer{
-        @include container;
+        width: 100%;
         position: fixed;
         bottom: 0;
-        margin: 10px auto 15px;
         font-size: 20px;
         display:flex;
         justify-content: space-between;
-        left: 50%;
         color: $color;
-        transform: translateX(-50%);
+        background: linear-gradient(to top, $invColor, rgba($invColor, 0.6));
         .nav{
+            @include container;
+            margin-top: 20px;
+            margin-bottom: 25px;
             .branding{
                 display: inline-block;
                 vertical-align: middle;

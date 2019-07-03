@@ -9,7 +9,7 @@ body{
 }
 
 @mixin container{
-    width: 90%;
+    width: 90% !important;
     margin:0 auto;
     @media all and (max-width: 768px){
         width:100%;
