@@ -7,7 +7,6 @@ import photo from '../assets/j.jpg';
 
 
 const Home = (props) => {
-    let currentTheme = props.theme;
     return (
         <div className="home">
             <div className="left-half">

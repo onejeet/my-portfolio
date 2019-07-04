@@ -11,10 +11,10 @@ class Projects extends PureComponent {
 
     getRepos = () => {
         let repos;
-        fetch('https://api.github.com/users/onejeet/repos')
+        fetch('https://api.github.com/users/onejeet/repos?sort=updated-desc')
         .then((response) => response.json())
         .then((data)=>{
-            repos = data.filter((repo)=> repo.fork !== true && repo.id !== 41561483);
+            repos = data.filter((repo)=> repo.fork !== true );
             this.props.updateRepos(repos);
         })
         .catch((e) => {
