@@ -1,8 +1,5 @@
 import React from 'react';
-//import imagePlaceholder from '../assets/placeholder.png';
-
-let imagePlaceholder = 'https://via.placeholder.com/300.png';
-
+import loader from '../assets/loader.gif';
 
 const ProfilePhoto = (props) => {
     let style = {
@@ -10,9 +7,14 @@ const ProfilePhoto = (props) => {
         'height': props.width
     }
     return (
-        <div className='profile-photo' style={style}>
-          <img src={props.photo? props.photo : imagePlaceholder} alt=""/>
-         </div>
+            props.photo ?
+            <div className='profile-photo' style={style}>
+                <img src={props.photo} alt=""/>
+            </div>
+            :
+            <div className="loader">
+                <img src={loader} alt="loader"/>
+            </div>
     );
     
 }

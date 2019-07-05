@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import RepositoryBox from './RepositoryBox';
-import { updateRepos } from '../actions'
+import { updateRepos } from '../actions';
+import loader from '../assets/loader.gif';
 
 class Projects extends PureComponent {
 
@@ -14,11 +15,40 @@ class Projects extends PureComponent {
         fetch('https://api.github.com/users/onejeet/repos?sort=updated-desc')
         .then((response) => response.json())
         .then((data)=>{
-            repos = data.filter((repo)=> repo.fork !== true );
-            this.props.updateRepos(repos);
+            repos = data.filter((repo, i)=> {
+                return repo.fork !== true ;
+            });
+            //this.props.updateRepos(repos);
+            this.getTopics(repos);
         })
         .catch((e) => {
             console.log("Error Occured: "+e);
+        });
+    }
+
+    getTopics = (repos) => {
+        let newRepos = [];
+        let requests = [];
+        repos.map((repo) => {
+            requests.push({
+                'repo' : repo,
+                'url': `https://api.github.com/repos/onejeet/${repo.name}/topics`
+            });
+        });
+
+        Promise.all(requests.map((req) => {
+           return (fetch(req.url, {
+                headers: {
+                    'Accept': 'application/vnd.github.mercy-preview+json'
+                }
+            }).then((response) => response.json()
+            ).then((data)=> {
+                req.repo['tags'] = data.names;
+                newRepos.push(req.repo);        
+            })
+           );
+        })).then(() => {
+            this.props.updateRepos(newRepos);
         });
     }
 
@@ -29,14 +59,21 @@ class Projects extends PureComponent {
                 <div className="controls">
                     
                 </div>
-                <div className="main">
+                {
+                    repos
+                    ? <div className="main">
                     {repos.map((repo) =>
                         <RepositoryBox
                         key = {repo.id}
                         project = {repo}
                         />
                     )}
-                </div>
+                    </div>
+                    :
+                    <div className="loader">
+                        <img src={loader} alt="loader"/>
+                    </div>
+                }     
             </div>
         );
     } 
@@ -50,8 +87,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        updateRepos :(repos) => dispatch(updateRepos(repos))
+        updateRepos :(repos) => dispatch(updateRepos(repos)),
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Projects);
+export default connect(mapStateToProps, mapDispatchToProps)(Projects);

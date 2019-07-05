@@ -44,6 +44,24 @@
                         border-radius: 100%;
                     }
                 }
+                .topics{
+                    display: block;
+                    color: #ffffff;
+                    .tag{
+                        font-size: 10px;
+                        display: inline-block;
+                        padding:1px 3px;
+                        background: rgba($color, 0.5);
+                        margin:0 2px 2px 0;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                        &:hover{
+                            font-size: 12px;
+                            background: linear-gradient(to right, #f35d18, #db3286);
+                        }
+                    }
+                }
             }
             @media all and (max-width: 768px){
                 justify-content: center;
