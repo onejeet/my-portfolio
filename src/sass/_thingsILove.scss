@@ -1,0 +1,26 @@
+@mixin thingsILove($color, $invColor){
+    .things{
+        @include container;
+        margin-top:50px;
+        color: $color;
+        .list{
+            margin: 20px auto 50px;
+            .card{
+                @include card;
+                margin: 0;
+                padding: 5px;
+                overflow: hidden;
+                img{ 
+                    border-radius: 4px;
+                }
+                .title{
+                    text-align:center;
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin: 5px auto;
+                }
+            }
+        }
+        
+    }
+}

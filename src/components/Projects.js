@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import RepositoryBox from './RepositoryBox';
 import { updateRepos } from '../actions';
-import loader from '../assets/loader.gif';
+import loader from '../assets/loader-2.gif';
 
 class Projects extends PureComponent {
 
