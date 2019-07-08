@@ -19,9 +19,24 @@ body{
     display: inline-block;
     max-width: 350px;
     border-radius: 4px;
-    border: 1px solid #d1d5da;
+    box-shadow: 0 0 3px 0 #494949;
     padding: 16px;
     margin: 10px;
+}
+
+@mixin indicator{
+    span{
+        display: inline-block;
+        width:8px;
+        height:8px;
+        margin-right: 5px;
+        padding: 2px;
+        border-radius: 100%;
+        &.live-indicator{
+            background-color:red;
+            animation: live 0.8s infinite alternate;
+        }   
+    }
 }
 
 a{
@@ -65,5 +80,17 @@ a{
         //margin-left: -25%; //centers the image
         height: 100%;
         width: auto;
+    }
+}
+
+@keyframes live{
+    0%{
+        box-shadow: 0 0 1px 0 red;
+    }
+    50%{
+        box-shadow: 0 0 2px 0 red;
+    }
+    100%{
+        box-shadow: 0 0 2px 0.5px red;
     }
 }

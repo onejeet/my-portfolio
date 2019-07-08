@@ -7,7 +7,8 @@
             margin: 20px auto 50px;
             .card{
                 @include card;
-                margin: 0;
+                box-shadow: 0 0 3px 0 $color;
+                margin: 0 15px 15px 0;
                 padding: 5px;
                 overflow: hidden;
                 img{ 

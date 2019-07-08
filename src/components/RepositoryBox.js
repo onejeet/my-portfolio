@@ -34,6 +34,7 @@ class RepositoryBox extends PureComponent{
                 <h2 className="title"><i className="fa fa-folder" aria-hidden="true"></i><a href={project.html_url} target="_blank" rel="noreferrer noopener">{this.nameFormatter(project.name)}</a></h2>
                 <p className="description">{project.description}</p>
                 <p className="language"><span style={{backgroundColor:color}}></span>{project.language}</p>
+                { project.homepage && <p className="live"><span className="live-indicator"></span><a href={project.homepage} target="_blank" rel="noopener noreferrer">Live</a></p>}
                 <p className="topics">
                     { project.tags && project.tags.map((t) =>
                             <span className="tag" key={t} >{t}</span>
