@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import RepositoryBox from './RepositoryBox';
-import { updateRepos } from '../actions';
+import { updateRepos, updateFilter } from '../actions';
 import loader from '../assets/loader-2.gif';
+
+let filterList = ['ES6', 'ReactJS', 'Redux', 'SASS'];
 
 class Projects extends PureComponent {
 
@@ -52,17 +54,40 @@ class Projects extends PureComponent {
         });
     }
 
+    handleFilterClick = (e) => {
+        let txt = e.target.textContent;
+        this.props.updateFilter(txt);
+    }
+
+    filterRepos = (repos) => {
+        const { filter } = this.props;
+        if(repos && filter){
+            console.log(filter.toLowerCase());
+            return repos.filter((r) => r.tags.includes(filter.toLowerCase()));
+        }else{
+            return repos;
+        }
+    }
+
     render(){
         const { repos } = this.props;
+        let filteredRepos = repos ? this.filterRepos(repos) : null;
+        console.log(filteredRepos);
         return (
             <div className="projects">
                 <div className="controls">
-                    
+                    <div className="filters">
+                        {
+                            filterList.map((f) =>
+                                <p onClick={(e) => this.handleFilterClick(e)} key={f}>{f} </p>
+                            )
+                        }
+                    </div>
                 </div>
                 {
-                    repos
+                    filteredRepos
                     ? <div className="main">
-                    {repos.map((repo) =>
+                    {filteredRepos.map((repo) =>
                         <RepositoryBox
                         key = {repo.id}
                         project = {repo}
@@ -81,13 +106,15 @@ class Projects extends PureComponent {
 
 function mapStateToProps(state){
     return {
-        repos: state.currentRepos.repos
+        repos: state.currentRepos.repos,
+        filter: state.currentFilter.filter
     }
 }
 
 function mapDispatchToProps(dispatch){
     return {
         updateRepos :(repos) => dispatch(updateRepos(repos)),
+        updateFilter : (filter) => dispatch(updateFilter(filter))
     }
 }
 

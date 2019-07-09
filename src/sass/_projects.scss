@@ -6,7 +6,19 @@
         margin-bottom: 100px;
         color:$color;
         .controls{
-
+            > p{
+                display: inline;
+            }
+            .filters{
+                display: flex;
+                justify-content: flex-start;
+                p{
+                    padding: 3px 5px;
+                    margin: 0 5px 5px 0;
+                    box-shadow: 0 0 3px 0 $color;
+                    border-radius: 4px;
+                }
+            }
         }
         .main{
             display: flex;
