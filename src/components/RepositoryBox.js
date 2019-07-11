@@ -15,17 +15,6 @@ class RepositoryBox extends PureComponent{
         return st.map((w) => w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
     }
 
-    selectTags = (topics, id) => {
-        if(topics){
-            topics.forEach((t) => {
-                if(t.id === id){
-                    return t.tags;
-                }
-                return [];
-            });
-        }    
-    }
-
     render(){
         const { project} = this.props;
         let color = colors[project.language] ? colors[project.language] : '#000000';

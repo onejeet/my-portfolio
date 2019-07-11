@@ -2,7 +2,7 @@
     .projects{
         @include container;
         position: relative;
-        margin-top: 50px;
+        margin-top: 20px;
         margin-bottom: 100px;
         color:$color;
         .controls{
@@ -22,12 +22,16 @@
                     box-shadow: 0 0 3px 0 $color;
                     border-radius: 4px;
                     cursor: pointer;
+                    &.active{
+                        background: linear-gradient(to right, #f35d18, #db3286);
+                        color:#ffffff;
+                    }
                 }
             }
         }
         .main{
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             flex-wrap: wrap;
             .card{
                 @include card;

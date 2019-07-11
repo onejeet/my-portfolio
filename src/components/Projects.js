@@ -56,30 +56,32 @@ class Projects extends PureComponent {
 
     handleFilterClick = (e) => {
         let txt = e.target.textContent;
-        this.props.updateFilter(txt);
+        this.props.updateFilter(txt.trim().toLowerCase());
     }
 
-    filterRepos = (repos) => {
-        const { filter } = this.props;
+    filterRepos = (repos, filter) => {
         if(repos && filter){
-            console.log(filter.toLowerCase());
-            return repos.filter((r) => r.tags.includes(filter.toLowerCase()));
+            if(filter === 'all'){
+                return repos;
+            }
+            return repos.filter((r) => r.tags.includes(filter));
         }else{
             return repos;
         }
     }
 
     render(){
-        const { repos } = this.props;
-        let filteredRepos = repos ? this.filterRepos(repos) : null;
-        console.log(filteredRepos);
+        const { repos, filter } = this.props;
+        let filteredRepos = repos ? this.filterRepos(repos, filter) : null;
         return (
             <div className="projects">
                 <div className="controls">
                     <div className="filters">
+                        <label>Filters:</label>
+                        <p className={filter === 'all'? 'active': ''} onClick={(e) => this.handleFilterClick(e)}>All</p>
                         {
                             filterList.map((f) =>
-                                <p onClick={(e) => this.handleFilterClick(e)} key={f}>{f} </p>
+                                <p className={filter === f.toLowerCase() ? 'active': ''} onClick={(e) => this.handleFilterClick(e)} key={f}>{f} </p>
                             )
                         }
                     </div>

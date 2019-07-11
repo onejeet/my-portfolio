@@ -21,7 +21,7 @@ function currentRepos(state={}, action){
     return state;
 }
 
-function currentFilter(state={}, action){
+function currentFilter(state={'filter':'all'}, action){
     if(action.type=== 'UPDATE_FILTER'){
         return Object.assign({}, state, {'filter':action.payload});
     }
