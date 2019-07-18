@@ -55,12 +55,15 @@ a{
     display: inline-block;
 }
 
-.loader img{
-    max-width: 150px;
+.loader{
+    max-width: 300px;
     position: fixed;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
+    img{
+        max-width: 150px;
+    }
 }
 
 .profile-photo{
